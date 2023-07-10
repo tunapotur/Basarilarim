@@ -1,12 +1,12 @@
 import React from "react";
 import ISuccess from "@/interfaces/isuccess";
 
-const SuccessCard = ({ title, description, date }: ISuccess) => {
+const SuccessCard = (success: ISuccess) => {
   return (
     <div>
-      <h5>{title}</h5>
-      <p>{description}</p>
-      <div>{date}</div>
+      <h5>{success.title}</h5>
+      <p>{success.description}</p>
+      <div>{success.date}</div>
     </div>
   );
 };
