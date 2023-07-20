@@ -1,14 +1,12 @@
-import React from "react";
-import SuccessCard from "@/components/success-card";
-import { ISuccessCardList } from "@/interfaces/isuccess";
+import React from 'react';
+import SuccessCard from '@/components/success-card';
+import ISuccessList from '@/interfaces/success-list';
 
-const SuccessCardList = ({ successes }: ISuccessCardList) => {
+const SuccessCardList = ({ success_list }: { success_list: ISuccessList }) => {
   return (
-    <ul>
-      {successes.map((success) => (
-        <li key={success.id}>
-          <SuccessCard {...success} />
-        </li>
+    <ul className='flex flex-col space-y-6 py-6 px-1'>
+      {success_list.map((success) => (
+        <SuccessCard key={success.id} {...success} />
       ))}
     </ul>
   );

@@ -1,13 +1,13 @@
-import React from "react";
-import ISuccess from "@/interfaces/isuccess";
+import React from 'react';
+import ISuccess from '@/interfaces/success';
 
 const SuccessCard = (probs: ISuccess) => {
   return (
-    <div>
+    <li key={probs.id}>
       <h5>{probs.title}</h5>
       <p>{probs.description}</p>
       <div>{probs.date}</div>
-    </div>
+    </li>
   );
 };
 
