@@ -30,3 +30,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Useful Information Links
 
 Komponentlere nasıl obje göndereceğimize dair bir yazı [Pass Object as props to a component in React TypeScript](https://bobbyhadz.com/blog/react-typescript-pass-object-as-props)
+
+### Yapılacaklar
+* test verisi mongodb'den çekilecek
+* test verisi mongodb'ye kaydedilecek
