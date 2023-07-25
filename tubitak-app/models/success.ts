@@ -1,3 +1,6 @@
+// TODO altta bulunan linkteki makale uygulanacak
+// https://mongoosejs.com/docs/typescript.html
+
 import mongoose, { Schema } from 'mongoose';
 
 const successSchema = new Schema(

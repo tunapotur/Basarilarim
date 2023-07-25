@@ -1,0 +1,30 @@
+// https://www.youtube.com/watch?v=wNWyMsrpbz0&t=791s
+import connectMongoDB from '@/libs/mongodb';
+import Success from '@/models/success';
+import { NextRequest, NextResponse } from 'next/server';
+import ISuccess from '@/interfaces/success';
+
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: ISuccess }
+) {
+  const { id } = params;
+  const {
+    newTitle: title,
+    newDescription: description,
+    newDate: date,
+  } = await request.json();
+  await connectMongoDB();
+  await Success.findByIdAndUpdate(id, { title, description, date });
+  return NextResponse.json({ message: 'Success updated' }, { status: 200 });
+}
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: ISuccess }
+) {
+  const { id } = params;
+  await connectMongoDB();
+  const success = await Success.findOne({ _id: id });
+  return NextResponse.json({ success }, { status: 200 });
+}

@@ -1,7 +1,7 @@
+// https://www.youtube.com/watch?v=wNWyMsrpbz0&t=791s
 import connectMongoDB from '@/libs/mongodb';
 import Success from '@/models/success';
 import { NextRequest, NextResponse } from 'next/server';
-import { Types } from 'mongoose';
 
 export async function POST(request: NextRequest) {
   const { title, description, date } = await request.json();
