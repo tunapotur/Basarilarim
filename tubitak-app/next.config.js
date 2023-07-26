@@ -3,7 +3,6 @@
 // ilk hali bu şekilde
 // const nextConfig = {}
 
-// TODO gerekli bir ayar mı bakılacak
 const nextConfig = {
   reactStrictMode: true,
   experimental: {

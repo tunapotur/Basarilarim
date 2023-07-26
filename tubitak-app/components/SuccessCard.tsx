@@ -4,12 +4,15 @@ import ISuccess from '@/interfaces/success';
 import RemoveBtn from './RemoveBtn';
 import { HiPencilAlt } from 'react-icons/hi';
 
+// TODO alttaki linke bak
+// https://tomanagle.medium.com/strongly-typed-models-with-mongoose-and-typescript-7bc2f7197722
+
 const SuccessCard = (probs: ISuccess) => {
   const date = probs.date.split('-');
 
   return (
     <div
-      key={probs.id}
+      key={probs._id}
       className="my-3 flex items-start justify-between gap-5 border border-slate-300 p-4"
     >
       <div>
@@ -19,8 +22,8 @@ const SuccessCard = (probs: ISuccess) => {
 
       <div>
         <div className="flex gap-2">
-          <RemoveBtn />
-          <Link href={'/editSuccess/123'}>
+          <RemoveBtn id={probs._id} />
+          <Link href={`/editSuccess/${probs._id}`}>
             <HiPencilAlt size={24} />
           </Link>
         </div>

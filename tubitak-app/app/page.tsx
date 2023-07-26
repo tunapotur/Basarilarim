@@ -1,12 +1,27 @@
 import React from 'react';
 import SuccessCard from '@/components/SuccessCard';
-import { success_list } from '@/mocks/success_list';
+import ISuccess from '@/interfaces/success';
 
-export default function Home() {
+const getSuccessList = async () => {
+  try {
+    const res = await fetch('http://localhost:3000/api/success', {
+      cache: 'no-store',
+    });
+    if (!res.ok) 
+      throw new Error('Failed to fetch success');
+      
+    return res.json();
+  } catch (error) {
+    console.log('Error loading success list', error);
+  }
+};
+
+export default async function Home() {
+  const successList = await getSuccessList();
   return (
     <>
-      {success_list.map((success) => (
-        <SuccessCard key={success.id} {...success} />
+      {successList.map((success: ISuccess) => (
+        <SuccessCard key={success._id} {...success} />
       ))}
     </>
   );

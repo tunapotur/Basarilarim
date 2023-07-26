@@ -4,10 +4,7 @@ import Success from '@/models/success';
 import { NextRequest, NextResponse } from 'next/server';
 import ISuccess from '@/interfaces/success';
 
-export async function PUT(
-  request: NextRequest,
-  { params }: { params: ISuccess }
-) {
+export async function PUT(request: NextRequest, { params }) {
   const { id } = params;
   const {
     newTitle: title,
@@ -19,10 +16,7 @@ export async function PUT(
   return NextResponse.json({ message: 'Success updated' }, { status: 200 });
 }
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: ISuccess }
-) {
+export async function GET(request: NextRequest, { params }) {
   const { id } = params;
   await connectMongoDB();
   const success = await Success.findOne({ _id: id });
