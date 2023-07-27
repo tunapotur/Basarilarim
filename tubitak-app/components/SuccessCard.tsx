@@ -1,13 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import ISuccess from '@/interfaces/success';
 import RemoveBtn from './RemoveBtn';
 import { HiPencilAlt } from 'react-icons/hi';
 
 // TODO alttaki linke bak
 // https://tomanagle.medium.com/strongly-typed-models-with-mongoose-and-typescript-7bc2f7197722
 
-const SuccessCard = (probs: ISuccess) => {
+const SuccessCard = (probs) => {
   const date = probs.date.split('-');
 
   return (

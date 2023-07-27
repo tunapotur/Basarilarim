@@ -1,6 +1,5 @@
 import React from 'react';
 import SuccessCard from '@/components/SuccessCard';
-import ISuccess from '@/interfaces/success';
 
 const getSuccessList = async () => {
   try {
@@ -20,7 +19,7 @@ export default async function Home() {
   const successList = await getSuccessList();
   return (
     <>
-      {successList.map((success: ISuccess) => (
+      {successList.map((success) => (
         <SuccessCard key={success._id} {...success} />
       ))}
     </>

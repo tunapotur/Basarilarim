@@ -1,7 +1,10 @@
-// TODO altta bulunan linkteki makale uygulanacak
-// https://mongoosejs.com/docs/typescript.html
-
 import mongoose, { Schema } from 'mongoose';
+
+export interface ISuccess {
+  title: string;
+  description: string;
+  date: string;
+}
 
 const successSchema = new Schema(
   {

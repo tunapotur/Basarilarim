@@ -2,7 +2,6 @@
 import connectMongoDB from '@/libs/mongodb';
 import Success from '@/models/success';
 import { NextRequest, NextResponse } from 'next/server';
-import ISuccess from '@/interfaces/success';
 
 export async function PUT(request: NextRequest, { params }) {
   const { id } = params;
