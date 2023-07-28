@@ -2,16 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import RemoveBtn from './RemoveBtn';
 import { HiPencilAlt } from 'react-icons/hi';
+import { ISuccess } from '@/models/success';
 
-// TODO alttaki linke bak
-// https://tomanagle.medium.com/strongly-typed-models-with-mongoose-and-typescript-7bc2f7197722
-
-const SuccessCard = (probs) => {
+const SuccessCard = (probs: ISuccess) => {
   const date = probs.date.split('-');
-
   return (
     <div
-      key={probs._id}
+      // key={probs._id}
       className="my-3 flex items-start justify-between gap-5 border border-slate-300 p-4"
     >
       <div>
@@ -21,7 +18,7 @@ const SuccessCard = (probs) => {
 
       <div>
         <div className="flex gap-2">
-          <RemoveBtn id={probs._id} />
+          <RemoveBtn _id={probs._id} />
           <Link href={`/editSuccess/${probs._id}`}>
             <HiPencilAlt size={24} />
           </Link>
@@ -39,3 +36,5 @@ const SuccessCard = (probs) => {
 };
 
 export default SuccessCard;
+
+// https://www.sharooq.com/solved-type-x-is-missing-the-following-properties-from-type-y-using-typescript-in-reactc

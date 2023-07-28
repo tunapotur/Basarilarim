@@ -1,9 +1,12 @@
 // https://www.youtube.com/watch?v=wNWyMsrpbz0&t=791s
 import connectMongoDB from '@/libs/mongodb';
-import Success from '@/models/success';
 import { NextRequest, NextResponse } from 'next/server';
+import Success, { ParamId } from '@/models/success';
 
-export async function PUT(request: NextRequest, { params }) {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: ParamId }
+) {
   const { id } = params;
   const {
     newTitle: title,
@@ -15,7 +18,10 @@ export async function PUT(request: NextRequest, { params }) {
   return NextResponse.json({ message: 'Success updated' }, { status: 200 });
 }
 
-export async function GET(request: NextRequest, { params }) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: ParamId }
+) {
   const { id } = params;
   await connectMongoDB();
   const success = await Success.findOne({ _id: id });

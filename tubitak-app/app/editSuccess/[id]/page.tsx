@@ -1,7 +1,8 @@
 import EditSuccessForm from '@/components/EditSuccessForm';
 import React from 'react';
+import { ParamId, idType } from '@/models/success';
 
-const getSuccessById = async (id: string) => {
+const getSuccessById = async (id: idType) => {
   try {
     const res = await fetch(`http://localhost:3000/api/success/${id}`, {
       cache: 'no-store',
@@ -15,12 +16,19 @@ const getSuccessById = async (id: string) => {
   }
 };
 
-const EditSuccess = async ({ params }) => {
+const EditSuccess = async ({ params }: { params: ParamId }) => {
   const { id } = params;
-  const { success } = await getSuccessById(id);
+  const { success } = await getSuccessById(String(id));
   const { title, description, date } = success;
 
-  return <EditSuccessForm id={id} title={title} description={description} date={date} />;
+  return (
+    <EditSuccessForm
+      _id={String(id)}
+      title={title}
+      description={description}
+      date={date}
+    />
+  );
 };
 
 export default EditSuccess;

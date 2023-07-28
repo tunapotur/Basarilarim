@@ -1,11 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { ISuccess } from '@/models/success';
 
-const EditSuccessForm = ({ id, title, description, date }) => {
-  const [newTitle, setNewTitle] = useState(title);
-  const [newDescription, setNewDescription] = useState(description);
-  const [newDate, setNewDate] = useState(date);
+const EditSuccessForm = (probs: ISuccess) => {
+  const [newTitle, setNewTitle] = useState(probs.title);
+  const [newDescription, setNewDescription] = useState(probs.description);
+  const [newDate, setNewDate] = useState(probs.date);
 
   const router = useRouter();
 
@@ -13,17 +14,20 @@ const EditSuccessForm = ({ id, title, description, date }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/success/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          newTitle,
-          newDescription,
-          newDate,
-        }),
-      });
+      const res = await fetch(
+        `http://localhost:3000/api/success/${probs._id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            newTitle,
+            newDescription,
+            newDate,
+          }),
+        }
+      );
 
       if (!res.ok) {
         throw new Error('Failed to update success');

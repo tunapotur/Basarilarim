@@ -3,14 +3,15 @@
 import React from 'react';
 import { HiOutlineTrash } from 'react-icons/hi';
 import { useRouter } from 'next/navigation';
+import { idType } from '@/models/success';
 
-const RemoveBtn = ({ id }: { id: number }) => {
+const RemoveBtn = ({ _id }: { _id: idType }) => {
   const router = useRouter();
   const removeSuccess = async () => {
     const confirmed = confirm('Are you sure you want to delete this success?');
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/success?id=${id}`, {
+      const res = await fetch(`http://localhost:3000/api/success?id=${_id}`, {
         method: 'DELETE',
       });
 
@@ -26,3 +27,5 @@ const RemoveBtn = ({ id }: { id: number }) => {
 };
 
 export default RemoveBtn;
+
+// https://bobbyhadz.com/blog/typescript-type-undefined-is-not-assignable-to-type
