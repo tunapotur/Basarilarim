@@ -7,10 +7,7 @@ import { ISuccess } from '@/models/success';
 const SuccessCard = (probs: ISuccess) => {
   const date = probs.date.split('-');
   return (
-    <div
-      // key={probs._id}
-      className="my-3 flex items-start justify-between gap-5 border border-slate-300 p-4"
-    >
+    <div className="my-3 flex items-start justify-between gap-5 border border-slate-300 p-4">
       <div>
         <h2 className="text-2xl font-bold uppercase">{probs.title}</h2>
         <p>{probs.description}</p>
