@@ -1,11 +1,11 @@
-'use client';
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const AddSuccess = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
 
   const router = useRouter();
 
@@ -19,18 +19,19 @@ const AddSuccess = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/success', {
-        method: 'POST',
+      const res = await fetch("http://localhost:3000/api/success", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ title, description, date }),
       });
 
       if (res.ok) {
-        router.push('/');
+        router.refresh();
+        router.push("/");
       } else {
-        throw new Error('Failed to create a success');
+        throw new Error("Failed to create a success");
       }
     } catch (error) {
       console.log(error);

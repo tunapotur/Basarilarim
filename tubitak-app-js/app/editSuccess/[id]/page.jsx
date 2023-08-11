@@ -17,12 +17,12 @@ const getSuccessById = async (id) => {
 
 const EditSuccess = async ({ params }) => {
   const { id } = params;
-  const { success } = await getSuccessById(String(id));
+  const { success } = await getSuccessById(id);
   const { title, description, date } = success;
 
   return (
     <EditSuccessForm
-      _id={String(id)}
+      _id={id}
       title={title}
       description={description}
       date={date}
