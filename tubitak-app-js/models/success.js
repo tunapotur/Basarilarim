@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-export const SuccessSchema = new Schema()(
+export const successSchema = new Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
@@ -10,6 +10,6 @@ export const SuccessSchema = new Schema()(
 );
 
 const Success =
-  mongoose.models.Success || mongoose.model("Success", SuccessSchema);
+  mongoose.models.Success || mongoose.model("Success", successSchema);
 
 export default Success;
