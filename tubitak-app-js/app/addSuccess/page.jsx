@@ -6,13 +6,14 @@ const AddSuccess = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
-    // TODO date varsayılan olarak günün tarihi gelecek. Eğer kullanıcı isterse değiştirebilecek.
     if (!title || !description || !date) {
       alert("Title, description and date can't be empty");
       return;
@@ -68,7 +69,8 @@ const AddSuccess = () => {
         type="submit"
         className="w-fit bg-green-600 px-6 py-3 font-bold text-white"
       >
-        Add Success
+        {isLoading && <span>Adding...</span>}
+        {!isLoading && <span>Add Success</span>}
       </button>
     </form>
   );

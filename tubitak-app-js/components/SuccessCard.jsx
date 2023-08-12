@@ -8,8 +8,10 @@ const SuccessCard = (probs) => {
   return (
     <div className="my-3 flex items-start justify-between gap-5 border border-slate-300 p-4">
       <div>
-        <h2 className="text-2xl font-bold uppercase">{probs.title}</h2>
-        <p>{probs.description}</p>
+        <h2 className="text-2xl font-bold uppercase">
+          <Link href={`/success/${probs._id}`}>{probs.title} </Link>
+        </h2>
+        <p>{probs.description.slice(0, 200)}...</p>
       </div>
 
       <div>

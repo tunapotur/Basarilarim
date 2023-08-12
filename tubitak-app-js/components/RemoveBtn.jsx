@@ -14,7 +14,10 @@ const RemoveBtn = ({ _id }) => {
         method: "DELETE",
       });
 
-      if (res.ok) router.refresh();
+      if (res.ok) {
+        router.refresh();
+        router.push("/");
+      }
     }
   };
 

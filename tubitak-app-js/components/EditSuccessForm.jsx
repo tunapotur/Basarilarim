@@ -6,11 +6,13 @@ const EditSuccessForm = (probs) => {
   const [newTitle, setNewTitle] = useState(probs.title);
   const [newDescription, setNewDescription] = useState(probs.description);
   const [newDate, setNewDate] = useState(probs.date);
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       const res = await fetch(
@@ -66,7 +68,8 @@ const EditSuccessForm = (probs) => {
       />
 
       <button className="w-fit bg-green-600 px-6 py-3 font-bold text-white">
-        Update Success
+        {isLoading && <span>Updating...</span>}
+        {!isLoading && <span>Update Success</span>}
       </button>
     </form>
   );
