@@ -48,7 +48,7 @@ export default async function SuccessDetail({ params }) {
       <nav>
         <h2>Success Details</h2>
         <div className="ml-auto">
-          {data.session.user.email === success.user_email && (
+          {data.session && data.session.user.email === success.user_email && (
             <DeleteButton id={success.id} />
           )}
         </div>
