@@ -12,7 +12,7 @@ export default function DeleteButton({ id }) {
   const handleClick = async () => {
     setIsLoading(true);
 
-    const res = await fetch(`http://localhost:3000/api/success/${id}`, {
+    const res = await fetch(`http://localhost:8080/api/success/${id}`, {
       method: "DELETE",
     });
     const json = await res.json();
@@ -38,7 +38,7 @@ export default function DeleteButton({ id }) {
       {!isLoading && (
         <>
           <TiDelete />
-          Delete Ticket
+          Delete
         </>
       )}
     </button>

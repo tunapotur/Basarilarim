@@ -4,6 +4,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
 // components
 import DeleteButton from "./DeleteButton";
+import EditButton from "./EditButton";
 
 export const dynamicParams = true;
 
@@ -47,11 +48,12 @@ export default async function SuccessDetail({ params }) {
     <main>
       <nav>
         <h2>Success Details</h2>
-        <div className="ml-auto">
-          {data.session && data.session.user.email === success.user_email && (
+        {data.session && data.session.user.email === success.user_email && (
+          <div className="ml-auto flex space-x-3">
+            <EditButton id={success.id} />
             <DeleteButton id={success.id} />
-          )}
-        </div>
+          </div>
+        )}
       </nav>
       <div className="card">
         <h3>{success.title}</h3>

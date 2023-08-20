@@ -30,7 +30,7 @@ export default function CreateForm() {
 
     const newSuccess = { title, description, date };
 
-    const res = await fetch("http://localhost:3000/api/success", {
+    const res = await fetch(`http://localhost:8080/api/success`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newSuccess),
@@ -39,7 +39,8 @@ export default function CreateForm() {
     const json = await res.json();
 
     if (json.error) {
-      console.log(error.message);
+      console.log(error);
+      setIsLoading(false);
     }
     if (json.data) {
       router.refresh();
@@ -78,7 +79,7 @@ export default function CreateForm() {
 
       <button className="btn-primary" disabled={isLoading}>
         {isLoading && <span>Adding...</span>}
-        {!isLoading && <span>Add Success</span>}
+        {!isLoading && <span>Add</span>}
       </button>
     </form>
   );
