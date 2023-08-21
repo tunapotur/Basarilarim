@@ -53,9 +53,6 @@ export default function EditForm({ success }) {
       .update({ title, description, date })
       .eq("id", success.id);
 
-    // console.log("DATA", data);
-    console.log("ERROR", error);
-
     if (error) {
       console.log(error);
       setIsLoading(false);

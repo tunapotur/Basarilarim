@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import getSuccess from "../../getSuccess";
 
 // components
 import DeleteButton from "./DeleteButton";
@@ -20,22 +21,6 @@ export async function generateMetadata({ params }) {
   return {
     title: `Success | ${success?.title || "Success not Found"}`,
   };
-}
-
-async function getSuccess(id) {
-  const supabase = createServerComponentClient({ cookies });
-
-  const { data } = await supabase
-    .from("successes")
-    .select()
-    .eq("id", id)
-    .single();
-
-  if (!data) {
-    notFound();
-  }
-
-  return data;
 }
 
 export default async function SuccessDetail({ params }) {
@@ -59,7 +44,7 @@ export default async function SuccessDetail({ params }) {
         <h3>{success.title}</h3>
         <small>Created by {success.user_email}</small>
         <p>{success.description}</p>
-        <div className={`pill low`}>2021-10-10</div>
+        <div className={`pill low`}>{success.date}</div>
       </div>
     </main>
   );
