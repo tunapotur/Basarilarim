@@ -17,7 +17,10 @@ https://stackoverflow.com/questions/60147499/how-to-set-port-in-next-js
 npx next dev -p 8080
 
 "scripts": {
-  "dev": "next dev -p 8080",
-  "start": "next start -p 8080",
+"dev": "next dev -p 8080",
+"start": "next start -p 8080",
 },
 
+# TODO's
+
+Supabase üzerinde bulunan tabloları user tablosunu email'e göre değil userid'ye göre ilişkilendir
