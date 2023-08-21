@@ -18,11 +18,7 @@ async function getSuccess() {
 
 export default async function SuccessesHomePage() {
   const allsuccesses = await getSuccess();
-
-  const supabase = createServerComponentClient({ cookies });
-  //TODO buna bak gereksizse sil
-  const { data } = await supabase.auth.getSession();
-
+  
   return (
     <main>
       <nav>

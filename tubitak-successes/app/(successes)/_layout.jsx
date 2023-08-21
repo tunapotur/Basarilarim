@@ -26,4 +26,4 @@ export default async function SuccessesLayout({ children }) {
   );
 }
 
-// TODO: Delete this page
+// TODO Gerekil değilse bu sayfayı sil.
