@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
@@ -6,12 +7,9 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 // components
 import AuthForm from "@/components/AuthForm";
 
-export const dynamic = "force-dynamic";
-
 export const metadata = {
   title: "Successes | User Login",
 };
-
 
 export default function Login() {
   const router = useRouter();

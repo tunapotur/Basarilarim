@@ -1,8 +1,7 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-
-export const dynamic = 'force-dynamic'
 
 export default function LogoutButton() {
   const router = useRouter();
