@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import getSuccess from "../../getSuccess";
+import getSuccess from "@/services/getSuccess";
 
 // components
 import DeleteButton from "./DeleteButton";

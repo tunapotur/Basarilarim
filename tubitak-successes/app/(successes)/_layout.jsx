@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 
 
 // components
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/components/Navbar";
 
 export default async function SuccessesLayout({ children }) {
   const supabase = createServerComponentClient({ cookies });

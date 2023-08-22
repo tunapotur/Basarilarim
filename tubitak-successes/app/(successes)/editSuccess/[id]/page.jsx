@@ -1,10 +1,10 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import getSuccess from "../../getSuccess";
+import getSuccess from "@/services/getSuccess";
 
 //components
 import EditForm from "./EditForm";
-import BeforeLoginSignup from "@/app/components/BeforeLoginSignup";
+import BeforeLoginSignup from "@/components/BeforeLoginSignup";
 
 export const metadata = {
   title: "Edit Success",

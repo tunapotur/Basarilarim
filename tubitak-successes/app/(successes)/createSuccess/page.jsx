@@ -3,7 +3,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
 //components
 import CreateForm from "./CreateForm";
-import BeforeLoginSignup from "@/app/components/BeforeLoginSignup";
+import BeforeLoginSignup from "@/components/BeforeLoginSignup";
 
 export default async function AddSuccess() {
   const supabase = createServerComponentClient({ cookies });

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 // components
-import AuthForm from "@/app/components/AuthForm";
+import AuthForm from "@/components/AuthForm";
 
 export const dynamic = "force-dynamic";
 

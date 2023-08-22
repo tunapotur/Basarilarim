@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../public/goal-bold.png";
-import LogoutButton from "@/app/components/LogoutButton";
+import Logo from "@/public/goal-bold.png";
+import LogoutButton from "@/components/LogoutButton";
 
 export default function Navbar({ session }) {
   return (
