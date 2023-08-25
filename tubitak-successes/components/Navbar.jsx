@@ -37,10 +37,13 @@ export default function Navbar({ session }) {
           <LogoutButton />
         </>
       )}
+    </nav>
+  );
+}
 
-      {/* Alttaki cozum de yapılabilir*/}
-      {/* 
-        {session ? (
+/* 
+/// Alttaki cozum de yapılabilir
+{session ? (
         <>
           <span>{session.user.email}</span>
           <LogoutButton />
@@ -51,7 +54,4 @@ export default function Navbar({ session }) {
           <Link href="/signup">Sign Up</Link>
         </>
       )}
-       */}
-    </nav>
-  );
-}
+*/
