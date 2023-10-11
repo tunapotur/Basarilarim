@@ -7,9 +7,9 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 // components
 import AuthForm from "@/components/AuthForm";
 
-export const metadata = {
-  title: "Successes | User Login",
-};
+// export const metadata = {
+//   title: "Successes | User Login",
+// };
 
 export default function Login() {
   const router = useRouter();

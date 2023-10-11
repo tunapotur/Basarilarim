@@ -18,7 +18,8 @@ async function getSuccess() {
 
 export default async function SuccessesHomePage() {
   const allsuccesses = await getSuccess();
-  
+  allsuccesses.sort((a, b) => b.id - a.id);
+
   return (
     <main>
       <nav>
