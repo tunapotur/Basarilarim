@@ -1,19 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 // components
 import AuthForm from "@/components/AuthForm";
 
-// export const metadata = {
-//   title: "Successes | User Login",
-// };
-
 export default function Login() {
   const router = useRouter();
   const [error, setError] = useState("");
+
+  useEffect(function () {
+    document.title = "Successes | User Login";
+
+    return () => {
+      document.title = "Successes";
+    };
+  }, []);
 
   const handleSubmit = async (e, email, password) => {
     e.preventDefault();

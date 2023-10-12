@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const getCurrentDateInput = () => {
   const dateObj = new Date();
@@ -23,6 +23,14 @@ export default function CreateForm() {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(getCurrentDateInput());
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(function () {
+    document.title = "Successes | Add a new success";
+
+    return () => {
+      document.title = "Successes";
+    };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

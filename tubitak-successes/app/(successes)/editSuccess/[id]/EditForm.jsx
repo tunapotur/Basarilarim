@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function EditForm({ success }) {
@@ -12,6 +12,14 @@ export default function EditForm({ success }) {
   const [date, setDate] = useState(success.date);
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState(null);
+
+  useEffect(function () {
+    document.title = "Successes | Edit Success ";
+
+    return () => {
+      document.title = "Successes";
+    };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -6,10 +6,6 @@ import getSuccess from "@/services/getSuccess";
 import EditForm from "./EditForm";
 import BeforeLoginSignup from "@/components/BeforeLoginSignup";
 
-export const metadata = {
-  title: "Edit Success",
-};
-
 export default async function EditSuccess({ params }) {
   const supabase = createServerComponentClient({ cookies });
   const { data } = await supabase.auth.getSession();
